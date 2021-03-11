@@ -1,0 +1,67 @@
+import java.util.Scanner;
+public class Factory_6306021621111 {
+    
+    int sugar = 0, su = 0, water =0, wa = 0;
+    int result_water = 0, result_sugar = 0;
+    int remain_water = 0, remain_sugar = 0;
+    int i = 0;
+    
+    public int InputWaterAndSugar(int water ,int sugar ){
+        
+        Factory_6306021621111 factory = new Factory_6306021621111();
+        Scanner scan = new Scanner(System.in);
+
+        ++factory.i;
+        System.out.print("Please Enter Order of Water and Sugar of Factory in 7 day.");
+
+        for (int i = 0; factory.i < 7 ;i++){
+            System.out.println("");
+            System.out.print("\nPlease Enter Number Water in Day " + (i+1) +" : ");
+            factory.water = scan.nextInt();
+            wa = factory.water;
+            System.out.print("Please Enter Number Sugar in Day " + (i+1) +" : ");
+            factory.sugar = scan.nextInt();
+            su = factory.sugar;
+
+            while(0 > water || water > 10000 || 0 > sugar || sugar > 10000){
+                System.out.println(" 0 < Sugar And Water < 10000 ");
+                System.out.print("\nPlease Enter Number Water in Day " + (i+1) +" : ");
+                factory.water = scan.nextInt();
+                wa = factory.water;
+                System.out.print("Please Enter Number Sugar in Day " + (i+1) +" : ");
+                factory.sugar = scan.nextInt();
+                su = factory.sugar;
+            }
+            factory.Process(wa, su);
+        }
+        return 0;
+    }
+    public int Process(int wa, int su){
+        Factory_6306021621111 factory = new Factory_6306021621111();
+            System.out.print("  Result Water Number in Day " + (++factory.i) + " : " + wa);
+            System.out.print("\n  Result Water Number in Day " + (factory.i) +" : " + su);
+            result_water = wa/250;
+            result_sugar = su/15;
+            remain_water = wa - (wa-100);
+            remain_sugar = su/10;
+            System.out.print("\n  Production in day " + (factory.i) + " : " + result_water);
+            Factory_6306021621111.Show(remain_water, remain_sugar);
+            
+        
+        return 0;
+    }
+    public static void Show(int remain_water, int remain_sugar){
+        Factory_6306021621111 factory = new Factory_6306021621111();
+            
+            System.out.print("\n  Result Water Number in Day " + (++factory.i) + " : " + remain_water);
+            System.out.print("\n  Result Sugar Number in Day " + (factory.i) + " : " + remain_sugar);
+        
+    }
+    
+
+    public static void main (String[] args){
+        Factory_6306021621111 factory = new Factory_6306021621111();
+        factory.InputWaterAndSugar(factory.water, factory.sugar);
+        factory.Process(factory.water, factory.sugar);
+    }
+}
