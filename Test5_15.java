@@ -33,10 +33,10 @@ public class Test5_15 implements ActionListener {
         resultField = new JTextField( 15 );
         resultField.setEditable( false );
         container.add( resultField );
-        btn1 = new JButton(" carculam ");
+        btn1 = new JButton(" CALCULATE ");
         btn1.addActionListener( this);
         container.add( btn1 );
-        window.setSize( 300,200);
+        window.setSize( 300,400);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
     }
@@ -44,17 +44,14 @@ public class Test5_15 implements ActionListener {
         {
             int num1 = Integer.parseInt(number1Field.getText()) ;
             int num2 = Integer.parseInt(number2Field.getText()) ;
-            String op =  number3Field.getText();
-            if (event.getSource() == btn1)
-            {
-                if (op.equals("+"))
-            }  
+            String operand =  number3Field.getText();
+            if (operand.equals("+"))
                 resultField.setText(Integer.toString(num1+num2) ) ;
-            else if (event.getSource() == "-")
+            else if (operand.equals("-"))
                 resultField.setText(Integer.toString(num1-num2) ) ;
-            else if (event.getSource() == "*")
+            else if (operand.equals("*"))
                 resultField.setText(Integer.toString(num1*num2) ) ;
-            else if (event.getSource() == "/")
+            else if (operand.equals("/"))
                 resultField.setText(Float.toString((float)num1/num2) ) ;
             
         } // end method actionPerformed
@@ -62,8 +59,4 @@ public class Test5_15 implements ActionListener {
             Test5_15 gui = new Test5_15();
         }
 }
-
-
-                
-
 
