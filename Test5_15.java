@@ -59,4 +59,3 @@ public class Test5_15 implements ActionListener {
             Test5_15 gui = new Test5_15();
         }
 }
-
